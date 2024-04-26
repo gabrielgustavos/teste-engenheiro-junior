@@ -26,7 +26,7 @@ const useProductManagement = () => {
       await apiClient.post("produtos", newProduct);
       fetchProducts();
     } catch (error) {
-      console.error("Error adding client:", error);
+      console.error("Error adding product:", error);
     } finally {
       setLoading(false);
     }
@@ -38,7 +38,7 @@ const useProductManagement = () => {
       await apiClient.put(`produtos/${productId}`, updatedProduct);
       fetchProducts();
     } catch (error) {
-      console.error("Error editing client:", error);
+      console.error("Error editing product:", error);
     } finally {
       setLoading(false);
     }
@@ -50,7 +50,7 @@ const useProductManagement = () => {
       await apiClient.delete(`produtos/${productId}`);
       fetchProducts();
     } catch (error) {
-      console.error("Error deleting client:", error);
+      console.error("Error deleting product:", error);
     } finally {
       setLoading(false);
     }

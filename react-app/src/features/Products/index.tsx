@@ -11,7 +11,7 @@ import {
   TextField,
 } from "@mui/material";
 import { useState } from "react";
-import ClientForm from "./components/Form";
+import ProductForm from "./components/Form";
 import ProductTable from "./components/Table";
 import useProductManagement from "./hook/useProductManagement";
 import styles from "./styles.module.css";
@@ -123,7 +123,7 @@ const ProductList = () => {
           </TableBody>
         </Table>
       </TableContainer>
-      <ClientForm
+      <ProductForm
         open={open}
         handleClose={handleClose}
         editMode={editMode}

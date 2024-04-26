@@ -8,7 +8,7 @@ import {
   LinearProgress,
   TextField,
 } from "@mui/material";
-import { IClientFormProps } from "./types";
+import { IProductFormProps } from "./types";
 
 const ProductForm = ({
   open,
@@ -18,7 +18,7 @@ const ProductForm = ({
   newProduct,
   handleChange,
   handleSave,
-}: IClientFormProps) => {
+}: IProductFormProps) => {
   return (
     <Dialog open={open} onClose={handleClose}>
       <DialogTitle>

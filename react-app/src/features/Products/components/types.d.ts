@@ -1,4 +1,4 @@
-export interface IClientFormProps {
+export interface IProductFormProps {
   open: boolean;
   handleClose: () => void;
   editMode: boolean;
