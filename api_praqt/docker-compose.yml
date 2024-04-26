@@ -1,0 +1,44 @@
+version: "3"
+services:
+    app:
+        build:
+            context: .
+        ports:
+            - "8000:8000"
+        volumes:
+            - .:/var/www/html
+        environment:
+            - APP_NAME=Laravel
+            - APP_ENV=local
+            - APP_KEY=base64:0exUzRONXQluNmmaE6sO9ICWkURD36SrDgGl/tAdxqo=
+            - APP_DEBUG=true
+            - APP_TIMEZONE=UTC
+            - APP_URL=http://localhost
+            - DB_CONNECTION=pgsql
+            - DB_HOST=db
+            - DB_PORT=5432
+            - DB_DATABASE=postgres
+            - DB_USERNAME=postgres
+            - DB_PASSWORD=gabriel
+            - SESSION_DRIVER=database
+            - SESSION_LIFETIME=120
+            - SESSION_ENCRYPT=false
+            - SESSION_PATH=/
+            - SESSION_DOMAIN=null
+        depends_on:
+            - db
+
+    db:
+        container_name: db
+        image: postgres:latest
+        ports:
+            - "5432:5432"
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=gabriel
+            - POSTGRES_DB=postgres
+        volumes:
+            - postgres-data:/var/lib/postgresql/data
+
+volumes:
+    postgres-data:

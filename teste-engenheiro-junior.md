@@ -1,52 +1,58 @@
-# Teste para vaga de Engenheiro full stack Junior
+# Challenge Engenheiro full stack Junior
 
-Nesse teste analisaremos seu conhecimento geral, velocidade de desenvolvimento e capacidade de melhoria.
+## Pré-requisitos
 
-## Instruções
+Antes de começar, certifique-se de ter os seguintes requisitos instalados em sua máquina:
 
-Utilizando o framework PHP Laravel, e um banco de dados relacional SQLite, MySQL ou Postgres, você vai criar uma aplicação de cadastro de pedidos de compra com as seguintes funcionalidades:
+- [Docker](https://www.docker.com/products/docker-desktop/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
-- CRUD de clientes.
-- CRUD de produtos.
-- CRUD de pedidos de compra, com status (Em Aberto, Pago ou Cancelado).
-- Cada CRUD:
-  - conter lista dos itens cadastrado, com filtros e ordenação para tods os campos apresentados.
-  - deve possuir formulários para criação e atualização de seus itens.
-  - deve permitir a deleção de qualquer item de sua lista.
-    
-- API Rest JSON para todos os CRUDS listados.
+## Instalação
 
-## Banco
+Para instalar o projeto, siga os passos abaixo:
 
-- O banco de dados deve ser criado utilizando Migrations do framework Laravel, e também utilizar Seeds e Factorys para popular as informações no banco de dados.
-- Implementação das validações necessárias.
+1. Clone o repositório:
 
-## Tecnologias:
+```bash
+git clone https://github.com/gabrielgustavos/teste-engenheiro-junior.git
+```
 
-- HTML
-- CSS
-- Javascript(Poderá ser utilizado frameworks)
-- Framework Laravel (PHP)
-- Docker (construção do ambiente de desenvolvimento)
+2. O projeto está dividido em dois diretórios:
 
-## Entrega
+## FRONT END
 
-- Para iniciar o teste, faça um fork deste repositório; **Se você apenas clonar o repositório não vai conseguir fazer push.**
-- Crie uma branch com o seu nome completo;
-- Altere o arquivo teste-engenheiro-junior.md com as informações necessárias para executar o seu teste (comandos, migrations, seeds, etc);
-- Depois de finalizado, envie-nos o pull request;
+```bash
+cd react-app
+```
 
-## Bônus
+## BACK END
 
-- Implementar autenticação de usuário na aplicação.
-- Implementar aplicação de desconto em alguns pedidos de compra.
+```bash
+cd api_praqt
+```
 
+4. Migrations
 
-## O que iremos analisar
+```bash
+docker-compose exec app php artisan migrate --seed
+```
 
-- Organização do código;
-- Aplicação de design patterns;
-- Separação de módulos e componentes;
-- Legibilidade;
-- Criação do ambiente com Docker.
-- Inovação e melhorias.
+5. Rodar aplicação:
+
+```bash
+npm run dev (FRONT END)
+php artisan serve (BACK END)
+```
+
+## Pendências
+
+- CRUD de Pedidos de Compra
+- Implementar um CRUD de pedidos de compra, com as seguintes características:
+
+- Cada pedido deve ter um status (Em Aberto, Pago ou Cancelado).
+- Permitir listar, criar, atualizar e excluir pedidos de compra.
+- Autenticação de Usuário
+- Implementar autenticação de usuário na aplicação para controlar o acesso às funcionalidades.
+
+- Aplicação de Desconto
+- Implementar a aplicação de desconto em alguns pedidos de compra, conforme necessário.
